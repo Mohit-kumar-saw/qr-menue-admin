@@ -45,10 +45,7 @@ export default function CategoriesPage() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <div>
-          <h1 className="text-3xl font-black text-zinc-900 tracking-tight">Categories</h1>
-          <p className="text-gray-500">Organize your menu items efficiently</p>
-        </div>
+
         <button
           onClick={() => { setCategoryName(""); setEditingCategory(null); setShowModal(true); }}
           className="hidden md:flex bg-emerald-500 text-white px-6 py-3 rounded-2xl font-bold items-center gap-2 hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/20"
