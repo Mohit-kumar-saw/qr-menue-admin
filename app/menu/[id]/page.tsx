@@ -21,7 +21,7 @@ import { useAdmin } from "@/context/AdminContext";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
-const API_BASE_URL = "http://localhost:4000/api";
+const API_BASE_URL = "https://qr-menue-backend.onrender.com/api";
 
 export default function MenuItemDetail() {
   const params = useParams();
@@ -244,7 +244,7 @@ export default function MenuItemDetail() {
                     <div className="flex-1 min-w-0 pr-4">
                       <span className="text-xs font-black text-emerald-500 uppercase tracking-[0.3em] mb-2 block">{item.category?.name || "Featured Item"}</span>
                       <h1 className="text-4xl md:text-5xl font-black text-zinc-900 tracking-tight leading-tight mb-4 break-words">{item.name}</h1>
-                      
+
                       <div className="flex flex-col items-start gap-3 mt-1">
                         <div className={cn(
                           "inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.1em] shadow-sm",
@@ -254,7 +254,7 @@ export default function MenuItemDetail() {
                           {item.isAvailable ? "Live & Serving" : "Sold Out"}
                         </div>
 
-                        <button 
+                        <button
                           onClick={async () => {
                             try {
                               const newStatus = !item.isAvailable;

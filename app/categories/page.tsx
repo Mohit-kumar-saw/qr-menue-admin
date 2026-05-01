@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useAdmin } from "@/context/AdminContext";
 import { cn } from "@/lib/utils";
 
-const API_BASE_URL = "http://localhost:4000/api";
+const API_BASE_URL = "https://qr-menue-backend.onrender.com/api";
 
 export default function CategoriesPage() {
   const { categories, refreshData, loading } = useAdmin();
@@ -49,7 +49,7 @@ export default function CategoriesPage() {
           <h1 className="text-3xl font-black text-zinc-900 tracking-tight">Categories</h1>
           <p className="text-gray-500">Organize your menu items efficiently</p>
         </div>
-        <button 
+        <button
           onClick={() => { setCategoryName(""); setEditingCategory(null); setShowModal(true); }}
           className="hidden md:flex bg-emerald-500 text-white px-6 py-3 rounded-2xl font-bold items-center gap-2 hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/20"
         >
@@ -81,7 +81,7 @@ export default function CategoriesPage() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button 
+                  <button
                     onClick={() => {
                       setCategoryName(cat.name);
                       setEditingCategory(cat);
@@ -91,7 +91,7 @@ export default function CategoriesPage() {
                   >
                     <Edit size={20} />
                   </button>
-                  <button 
+                  <button
                     onClick={() => handleDelete(cat._id)}
                     className="p-3 text-red-500 hover:bg-red-50 rounded-xl transition-all"
                   >
@@ -165,7 +165,7 @@ export default function CategoriesPage() {
       </AnimatePresence>
 
       {/* Floating Action Button (Mobile Only) */}
-      <button 
+      <button
         onClick={() => { setCategoryName(""); setEditingCategory(null); setShowModal(true); }}
         className="md:hidden fixed bottom-24 right-6 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 z-40 transition-transform"
       >
