@@ -18,11 +18,11 @@ export const Button = ({
   ...props 
 }: ButtonProps) => {
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-600 shadow-lg shadow-emerald-500/20 active:scale-95",
+    primary: "bg-[#021d4f] text-white hover:bg-zinc-900 shadow-lg shadow-blue-900/20 active:scale-95",
     secondary: "bg-zinc-900 text-white hover:bg-zinc-800 shadow-xl shadow-zinc-200 active:scale-95",
-    outline: "bg-white border-2 border-gray-100 text-gray-600 hover:border-emerald-500 hover:text-emerald-500 active:scale-95",
+    outline: "bg-white border-2 border-gray-100 text-gray-600 hover:border-[#021d4f] hover:text-[#021d4f] active:scale-95",
     danger: "bg-red-50 text-red-500 hover:bg-red-500 hover:text-white active:scale-95",
-    ghost: "text-gray-400 hover:text-emerald-500 hover:bg-emerald-50"
+    ghost: "text-gray-400 hover:text-[#021d4f] hover:bg-blue-50"
   };
 
   const sizes = {

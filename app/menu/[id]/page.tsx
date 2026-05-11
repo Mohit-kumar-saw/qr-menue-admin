@@ -99,7 +99,7 @@ export default function MenuItemDetail() {
   if (loading) {
     return (
       <div className="p-20 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500"></div>
       </div>
     );
   }
@@ -117,7 +117,7 @@ export default function MenuItemDetail() {
     <div className="max-full mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       {/* Breadcrumbs */}
       <div className="flex items-center gap-2 text-sm text-gray-400">
-        <Link href="/menu" className="hover:text-emerald-500 transition-colors font-bold uppercase tracking-widest text-[10px]">Menu Catalog</Link>
+        <Link href="/menu" className="hover:text-amber-500 transition-colors font-bold uppercase tracking-widest text-[10px]">Menu Catalog</Link>
         <ChevronRight size={14} className="text-gray-200" />
         <span className="text-zinc-500 font-black uppercase tracking-widest text-[10px]">{item.name}</span>
       </div>
@@ -161,7 +161,7 @@ export default function MenuItemDetail() {
                   className="space-y-6"
                 >
                   <div className="flex justify-between items-center mb-8">
-                    <h2 className="text-3xl font-black text-zinc-900 tracking-tighter uppercase">Edit Masterpiece</h2>
+                    <h2 className="text-3xl font-serif font-semibold text-zinc-900 tracking-tight uppercase">Edit Masterpiece</h2>
                     <button type="button" onClick={() => setIsEditMode(false)} className="p-2 text-gray-300 hover:text-red-500 transition-colors">
                       <X size={32} />
                     </button>
@@ -174,7 +174,7 @@ export default function MenuItemDetail() {
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-bold text-lg"
+                      className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 outline-none transition-all font-bold text-lg"
                     />
                   </div>
 
@@ -187,7 +187,7 @@ export default function MenuItemDetail() {
                         required
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
-                        className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-bold text-lg"
+                        className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 outline-none transition-all font-bold text-lg"
                       />
                     </div>
                     <div className="space-y-2">
@@ -196,7 +196,7 @@ export default function MenuItemDetail() {
                         required
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
-                        className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-bold text-lg"
+                        className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 outline-none transition-all font-bold text-lg"
                       >
                         {categories.map(cat => (
                           <option key={cat._id} value={cat._id}>{cat.name}</option>
@@ -211,7 +211,7 @@ export default function MenuItemDetail() {
                       rows={4}
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
-                      className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all text-sm font-medium h-32 resize-none"
+                      className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 outline-none transition-all text-sm font-medium h-32 resize-none"
                     />
                   </div>
 
@@ -223,7 +223,7 @@ export default function MenuItemDetail() {
                         onChange={(e) => setIsAvailable(e.target.checked)}
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-500"></div>
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
                       <span className="ml-3 text-sm font-black text-zinc-700 uppercase tracking-widest">Available now</span>
                     </label>
                   </div>
@@ -242,13 +242,13 @@ export default function MenuItemDetail() {
                 >
                   <div className="flex flex-col lg:flex-row justify-between items-start gap-6">
                     <div className="flex-1 min-w-0 pr-4">
-                      <span className="text-xs font-black text-emerald-500 uppercase tracking-[0.3em] mb-2 block">{item.category?.name || "Featured Item"}</span>
-                      <h1 className="text-4xl md:text-5xl font-black text-zinc-900 tracking-tight leading-tight mb-4 break-words">{item.name}</h1>
+                      <span className="text-xs font-black text-amber-500 uppercase tracking-[0.3em] mb-2 block">{item.category?.name || "Featured Item"}</span>
+                      <h1 className="text-4xl md:text-5xl font-serif font-semibold text-zinc-900 tracking-tight leading-tight mb-4 break-words">{item.name}</h1>
 
                       <div className="flex flex-col items-start gap-3 mt-1">
                         <div className={cn(
                           "inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.1em] shadow-sm",
-                          item.isAvailable ? "bg-emerald-50 text-emerald-600 border border-emerald-100" : "bg-red-50 text-red-600 border border-red-100"
+                          item.isAvailable ? "bg-amber-50 text-amber-600 border border-amber-100" : "bg-red-50 text-red-600 border border-red-100"
                         )}>
                           {item.isAvailable ? <CheckCircle2 size={14} /> : <AlertCircle size={14} />}
                           {item.isAvailable ? "Live & Serving" : "Sold Out"}
@@ -269,7 +269,7 @@ export default function MenuItemDetail() {
                         >
                           <div className={cn(
                             "w-12 h-6 rounded-full relative transition-colors duration-300 shadow-inner",
-                            item.isAvailable ? "bg-emerald-500" : "bg-gray-300"
+                            item.isAvailable ? "bg-amber-500" : "bg-gray-300"
                           )}>
                             <div className={cn(
                               "w-5 h-5 bg-white rounded-full absolute top-[2px] transition-all duration-300 shadow-sm",
@@ -280,7 +280,7 @@ export default function MenuItemDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="text-3xl font-black text-emerald-500 tracking-tighter bg-emerald-50/50 px-6 py-4 rounded-[1.5rem] border border-emerald-100 shadow-sm flex-shrink-0">
+                    <div className="text-3xl font-serif font-semibold text-amber-500 tracking-tight bg-amber-50/50 px-6 py-4 rounded-[1.5rem] border border-amber-100 shadow-sm flex-shrink-0">
                       ₹{parseFloat(item.price).toFixed(2)}
                     </div>
                   </div>

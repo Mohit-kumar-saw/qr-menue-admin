@@ -99,7 +99,7 @@ export default function MenuPage() {
             placeholder="Search..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 md:pl-12 pr-3 md:pr-4 py-3 md:py-4 bg-white border border-gray-100 rounded-[1rem] md:rounded-2xl text-sm md:text-base focus:ring-4 focus:ring-emerald-500/10 outline-none shadow-sm text-zinc-900 font-medium transition-all"
+            className="w-full pl-9 md:pl-12 pr-3 md:pr-4 py-3 md:py-4 bg-white border border-gray-100 rounded-[1rem] md:rounded-2xl text-sm md:text-base focus:ring-4 focus:ring-blue-950/10 outline-none shadow-sm text-zinc-900 font-medium transition-all"
           />
         </div>
 
@@ -109,7 +109,7 @@ export default function MenuPage() {
           <div className="relative">
             <button
               onClick={() => setShowViewDropdown(!showViewDropdown)}
-              className="p-3 md:px-5 md:py-4 bg-white border border-gray-100 rounded-[1rem] md:rounded-[1.25rem] shadow-sm text-gray-500 hover:text-emerald-500 hover:bg-emerald-50 transition-all flex items-center gap-2"
+              className="p-3 md:px-5 md:py-4 bg-white border border-gray-100 rounded-[1rem] md:rounded-[1.25rem] shadow-sm text-gray-500 hover:text-[#021d4f] hover:bg-blue-50 transition-all flex items-center gap-2"
             >
               {viewMode === "grid" ? <GridIcon size={18} className="md:w-5 md:h-5" /> : viewMode === "list" ? <ListIcon size={18} className="md:w-5 md:h-5" /> : <UtensilsCrossed size={18} className="md:w-5 md:h-5" />}
               <ChevronDown size={14} className={cn("transition-transform", showViewDropdown && "rotate-180")} />
@@ -125,13 +125,13 @@ export default function MenuPage() {
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     className="absolute right-0 top-full mt-2 w-44 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden flex flex-col p-2"
                   >
-                    <button onClick={() => { setViewMode("grid"); setShowViewDropdown(false); }} className={cn("flex items-center gap-3 p-3 rounded-xl transition-all font-bold text-sm", viewMode === "grid" ? "text-emerald-500 bg-emerald-50" : "text-gray-500 hover:bg-gray-50 hover:text-zinc-900")}>
+                    <button onClick={() => { setViewMode("grid"); setShowViewDropdown(false); }} className={cn("flex items-center gap-3 p-3 rounded-xl transition-all font-bold text-sm", viewMode === "grid" ? "text-[#021d4f] bg-blue-50" : "text-gray-500 hover:bg-blue-50/50 hover:text-zinc-900")}>
                       <GridIcon size={16} /> Grid View
                     </button>
-                    <button onClick={() => { setViewMode("list"); setShowViewDropdown(false); }} className={cn("flex items-center gap-3 p-3 rounded-xl transition-all font-bold text-sm", viewMode === "list" ? "text-emerald-500 bg-emerald-50" : "text-gray-500 hover:bg-gray-50 hover:text-zinc-900")}>
+                    <button onClick={() => { setViewMode("list"); setShowViewDropdown(false); }} className={cn("flex items-center gap-3 p-3 rounded-xl transition-all font-bold text-sm", viewMode === "list" ? "text-[#021d4f] bg-blue-50" : "text-gray-500 hover:bg-blue-50/50 hover:text-zinc-900")}>
                       <ListIcon size={16} /> List View
                     </button>
-                    <button onClick={() => { setViewMode("images"); setShowViewDropdown(false); }} className={cn("flex items-center gap-3 p-3 rounded-xl transition-all font-bold text-sm", viewMode === "images" ? "text-emerald-500 bg-emerald-50" : "text-gray-500 hover:bg-gray-50 hover:text-zinc-900")}>
+                    <button onClick={() => { setViewMode("images"); setShowViewDropdown(false); }} className={cn("flex items-center gap-3 p-3 rounded-xl transition-all font-bold text-sm", viewMode === "images" ? "text-[#021d4f] bg-blue-50" : "text-gray-500 hover:bg-blue-50/50 hover:text-zinc-900")}>
                       <UtensilsCrossed size={16} /> Gallery
                     </button>
                   </motion.div>
@@ -143,7 +143,7 @@ export default function MenuPage() {
           {/* Desktop Create Button */}
           <button
             onClick={() => { resetForm(); setShowModal(true); }}
-            className="hidden md:flex bg-emerald-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-[1rem] md:rounded-[1.25rem] font-bold items-center justify-center gap-2 md:gap-3 hover:bg-emerald-600 transition-all shadow-xl shadow-emerald-500/20 flex-shrink-0 whitespace-nowrap"
+            className="hidden md:flex bg-[#021d4f] text-white px-6 md:px-8 py-3 md:py-4 rounded-[1rem] md:rounded-[1.25rem] font-bold items-center justify-center gap-2 md:gap-3 hover:bg-zinc-900 transition-all shadow-xl shadow-blue-900/20 flex-shrink-0 whitespace-nowrap"
           >
             <Plus size={20} className="md:h-6 md:w-6" /> <span className="hidden lg:inline">Create New Dish</span><span className="lg:hidden">New Dish</span>
           </button>
@@ -167,7 +167,7 @@ export default function MenuPage() {
             onClick={() => setActiveCategory(cat._id)}
             className={cn(
               "px-6 py-3 rounded-2xl font-bold text-sm transition-all whitespace-nowrap",
-              activeCategory === cat._id ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/20" : "bg-white text-gray-500 border border-gray-100 hover:bg-gray-50"
+              activeCategory === cat._id ? "bg-amber-500 text-white shadow-lg shadow-amber-500/20" : "bg-white text-gray-500 border border-gray-100 hover:bg-gray-50"
             )}
           >
             {cat.name}
@@ -208,7 +208,7 @@ export default function MenuPage() {
                     <UtensilsCrossed size={viewMode === "images" ? 24 : 48} className="text-gray-200" />
                   )}
                   {viewMode !== "list" && (
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-2xl font-black text-emerald-600 shadow-xl text-sm hidden">
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-2xl font-black text-[#021d4f] shadow-xl text-sm hidden lining-nums">
                       ₹{item.price}
                     </div>
                   )}
@@ -222,13 +222,13 @@ export default function MenuPage() {
                 )}>
                   <div className={cn(viewMode === "list" && "flex-1")}>
                     <span className={cn(
-                      "text-[10px] font-black text-emerald-500 uppercase tracking-[0.2em] mb-1 block",
+                      "text-[10px] font-black text-amber-500 uppercase tracking-[0.2em] mb-1 block",
                       viewMode === "images" && "hidden"
                     )}>
                       {item.category?.name || "Uncategorized"}
                     </span>
                     <h4 className={cn(
-                      "font-black text-zinc-900 tracking-tight leading-tight line-clamp-1 truncate",
+                      "font-serif font-semibold text-zinc-900 tracking-tight leading-tight line-clamp-1 truncate",
                       viewMode === "list" ? "text-xl" :
                         viewMode === "grid" ? "text-2xl mb-1" :
                           "text-xs"
@@ -240,13 +240,13 @@ export default function MenuPage() {
                         <p className="text-gray-500 text-sm font-medium line-clamp-2 leading-relaxed opacity-80 h-10 mb-3">
                           {item.description || "No description provided."}
                         </p>
-                        <div className="font-black text-emerald-600 text-lg">
+                        <div className="font-black text-[#021d4f] text-lg lining-nums">
                           ₹{parseFloat(item.price).toFixed(2)}
                         </div>
                       </>
                     )}
                   </div>
-                  {viewMode === "list" && <span className="text-2xl font-black text-emerald-600 ml-8">₹{item.price}</span>}
+                  {viewMode === "list" && <span className="text-2xl font-black text-[#021d4f] ml-8 lining-nums">₹{item.price}</span>}
                 </div>
               </Link>
             </div>
@@ -292,7 +292,7 @@ export default function MenuPage() {
                     type="text"
                     value={itemImage}
                     onChange={(e) => setItemImage(e.target.value)}
-                    className="w-full px-5 py-3 text-xs bg-white border border-gray-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all font-medium text-zinc-600 italic"
+                    className="w-full px-5 py-3 text-xs bg-white border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 outline-none transition-all font-medium text-zinc-600 italic"
                     placeholder="https://images.unsplash.com/photo-..."
                   />
                 </div>
@@ -301,7 +301,7 @@ export default function MenuPage() {
               <div className="md:w-7/12 p-6 md:p-12 flex flex-col flex-shrink-0">
                 <div className="flex justify-between items-start mb-8 md:mb-10">
                   <div>
-                    <h3 className="text-3xl md:text-4xl font-black text-zinc-900 tracking-tight leading-none mb-1 md:mb-2">
+                    <h3 className="text-3xl md:text-4xl font-serif font-semibold text-zinc-900 tracking-tight leading-none mb-1 md:mb-2">
                       {editingItem ? "Edit" : "New"} Dish
                     </h3>
                     <p className="text-gray-500 font-medium text-sm md:text-base">Define your culinary creation</p>
@@ -319,7 +319,7 @@ export default function MenuPage() {
                       required
                       value={itemName}
                       onChange={(e) => setItemName(e.target.value)}
-                      className="w-full px-5 py-3 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 focus:bg-white outline-none transition-all text-base md:text-lg font-bold text-zinc-900"
+                      className="w-full px-5 py-3 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 focus:bg-white outline-none transition-all text-base md:text-lg font-bold text-zinc-900"
                       placeholder="e.g. Wagyu Beef Slider"
                     />
                   </div>
@@ -333,7 +333,7 @@ export default function MenuPage() {
                         step="0.01"
                         value={itemPrice}
                         onChange={(e) => setItemPrice(e.target.value)}
-                        className="w-full px-5 py-3 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 focus:bg-white outline-none transition-all text-base md:text-lg font-bold text-zinc-900"
+                        className="w-full px-5 py-3 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 focus:bg-white outline-none transition-all text-base md:text-lg font-bold text-zinc-900"
                         placeholder="0.00"
                       />
                     </div>
@@ -343,7 +343,7 @@ export default function MenuPage() {
                         required
                         value={itemCategory}
                         onChange={(e) => setItemCategory(e.target.value)}
-                        className="w-full px-5 py-3 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 focus:bg-white outline-none transition-all text-base md:text-lg font-bold text-zinc-900"
+                        className="w-full px-5 py-3 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 focus:bg-white outline-none transition-all text-base md:text-lg font-bold text-zinc-900"
                       >
                         <option value="">Choose...</option>
                         {categories.map(cat => (
@@ -359,7 +359,7 @@ export default function MenuPage() {
                       rows={4}
                       value={itemDescription}
                       onChange={(e) => setItemDescription(e.target.value)}
-                      className="w-full px-5 py-3 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 focus:bg-white outline-none transition-all text-sm md:text-base font-medium text-zinc-700 resize-none h-24 md:h-32"
+                      className="w-full px-5 py-3 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 focus:bg-white outline-none transition-all text-sm md:text-base font-medium text-zinc-700 resize-none h-24 md:h-32"
                       placeholder="Describe the flavors, ingredients, and soul of this dish..."
                     />
                   </div>
@@ -374,7 +374,7 @@ export default function MenuPage() {
                     </button>
                     <button
                       type="submit"
-                      className="flex-1 px-4 py-4 md:px-8 md:py-5 bg-emerald-500 text-white rounded-2xl font-bold hover:bg-emerald-600 transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2 md:gap-3 text-base md:text-lg"
+                      className="flex-1 px-4 py-4 md:px-8 md:py-5 bg-[#021d4f] text-white rounded-2xl font-bold hover:bg-zinc-900 transition-all shadow-xl shadow-blue-900/20 flex items-center justify-center gap-2 md:gap-3 text-base md:text-lg"
                     >
                       <Save size={20} className="md:w-6 md:h-6" />
                       {editingItem ? "Update" : "Launch"}
@@ -390,7 +390,7 @@ export default function MenuPage() {
       {/* Floating Action Button (Mobile Only) */}
       <button
         onClick={() => { resetForm(); setShowModal(true); }}
-        className="md:hidden fixed bottom-24 right-6 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 z-40 transition-transform"
+        className="md:hidden fixed bottom-24 right-6 w-14 h-14 bg-[#021d4f] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 z-40 transition-transform"
       >
         <Plus size={28} />
       </button>
@@ -404,7 +404,7 @@ function ViewToggle({ active, icon, onClick }: { active: boolean; icon: React.Re
       onClick={onClick}
       className={cn(
         "p-3 rounded-xl transition-all duration-300",
-        active ? "bg-emerald-500 text-white shadow-lg" : "text-gray-400 hover:text-emerald-500 hover:bg-emerald-50"
+        active ? "bg-amber-500 text-white shadow-lg" : "text-gray-400 hover:text-amber-500 hover:bg-amber-50"
       )}
     >
       {icon}

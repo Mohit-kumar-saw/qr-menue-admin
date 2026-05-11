@@ -31,10 +31,10 @@ export function MobileNav() {
 
 function MobileNavLink({ href, icon, active }: { href: string; icon: React.ReactNode; active: boolean }) {
   return (
-    <Link href={href} className={cn("p-3 rounded-xl transition-all relative", active ? "text-emerald-500" : "text-zinc-500")}>
+    <Link href={href} className={cn("p-3 rounded-xl transition-all relative", active ? "text-amber-500" : "text-zinc-500")}>
       {icon}
       {active && (
-        <motion.div layoutId="mobile-nav-active" className="absolute -top-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-emerald-500" />
+        <motion.div layoutId="mobile-nav-active" className="absolute -top-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-amber-500" />
       )}
     </Link>
   );

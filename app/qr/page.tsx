@@ -43,7 +43,7 @@ export default function QRPage() {
               level="H"
               includeMargin={true}
               imageSettings={{
-                src: "/logo.png",
+                src: "/logo-splash.jpeg",
                 x: undefined,
                 y: undefined,
                 height: 50,
@@ -53,7 +53,7 @@ export default function QRPage() {
             />
           </div>
           <div className="space-y-2">
-            <h3 className="text-2xl font-black text-zinc-900 tracking-tight">Public Menu QR</h3>
+            <h3 className="text-2xl font-serif font-semibold text-zinc-900 tracking-tight">Public Menu QR</h3>
             <p className="text-gray-400 text-sm font-medium tracking-wide">SCAN TO VIEW LIVE MENU</p>
           </div>
 
@@ -62,7 +62,7 @@ export default function QRPage() {
           <div className="grid grid-cols-2 gap-4 w-full text-zinc-900">
             <button
               onClick={downloadQRCode}
-              className="flex items-center justify-center gap-3 bg-emerald-500 text-white p-5 rounded-3xl font-bold hover:bg-emerald-600 transition-all shadow-xl shadow-emerald-500/20"
+              className="flex items-center justify-center gap-3 bg-[#021d4f] text-white p-5 rounded-3xl font-bold hover:bg-zinc-900 transition-all shadow-xl shadow-zinc-200"
             >
               <Download size={20} /> PNG
             </button>
@@ -82,7 +82,7 @@ export default function QRPage() {
                   <p className="text-sm font-bold text-zinc-800">Custom Logo</p>
                   <p className="text-xs text-gray-400">Include restaurant logo in center</p>
                 </div>
-                <div className="w-12 h-6 bg-emerald-500 rounded-full relative px-1 flex items-center">
+                <div className="w-12 h-6 bg-[#021d4f] rounded-full relative px-1 flex items-center">
                   <div className="w-4 h-4 bg-white rounded-full ml-auto" />
                 </div>
               </div>
@@ -98,14 +98,14 @@ export default function QRPage() {
             </div>
           </div>
 
-          <div className="bg-emerald-50 p-8 rounded-3xl border border-emerald-100 text-emerald-800">
+          <div className="bg-amber-50 p-8 rounded-3xl border border-amber-100 text-amber-800">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-white rounded-xl shadow-sm">
-                <Share2 size={24} className="text-emerald-500" />
+                <Share2 size={24} className="text-amber-500" />
               </div>
               <h4 className="font-bold text-lg">Instant Sharing</h4>
             </div>
-            <p className="text-emerald-700/80 text-sm leading-relaxed mb-6">
+            <p className="text-amber-700/80 text-sm leading-relaxed mb-6">
               Download your high-resolution QR code and display it on table tents, windows, or coasters. Customers can scan it to instantly browse your menu without downloading any apps.
             </p>
             <button
@@ -113,7 +113,7 @@ export default function QRPage() {
                 navigator.clipboard.writeText(FRONTEND_URL);
                 alert("Link copied!");
               }}
-              className="w-full bg-white text-emerald-600 p-4 rounded-2xl font-bold hover:bg-emerald-100 transition-all shadow-sm"
+              className="w-full bg-white text-amber-600 p-4 rounded-2xl font-bold hover:bg-amber-50 transition-all shadow-sm"
             >
               Copy Menu Link
             </button>

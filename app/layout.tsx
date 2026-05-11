@@ -1,11 +1,17 @@
+import { Playfair_Display } from "next/font/google";
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
 import { MobileNav } from "@/components/MobileNav";
 import { AdminProvider } from "@/context/AdminContext";
 import "./globals.css";
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+});
+
 export const metadata = {
-  title: "TastyBytes | Admin Console",
+  title: "The Bliss Palampur | Admin Console",
   description: "Restaurant control panel",
 };
 
@@ -15,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="min-h-full bg-gray-50 flex flex-col text-zinc-900" suppressHydrationWarning>
+    <html lang="en" className={`${playfair.variable} h-full antialiased`} suppressHydrationWarning>
+      <body className="min-h-full bg-white flex flex-col text-zinc-900" suppressHydrationWarning>
         <AdminProvider>
           <div className="flex flex-col md:flex-row h-screen overflow-hidden">
             <Sidebar />
