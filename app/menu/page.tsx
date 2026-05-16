@@ -20,7 +20,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useAdmin } from "@/context/AdminContext";
 import { cn } from "@/lib/utils";
 
-const API_BASE_URL = "https://qr-menue-backend.onrender.com/api";
+const API_BASE_URL = "http://localhost:4001/api";
 
 export default function MenuPage() {
   const { menuItems, categories, refreshData, loading } = useAdmin();
@@ -320,7 +320,7 @@ export default function MenuPage() {
                       value={itemName}
                       onChange={(e) => setItemName(e.target.value)}
                       className="w-full px-5 py-3 md:px-6 md:py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 focus:bg-white outline-none transition-all text-base md:text-lg font-bold text-zinc-900"
-                      placeholder="e.g. Wagyu Beef Slider"
+                      placeholder="e.g. Hot Coffee, Tea"
                     />
                   </div>
 

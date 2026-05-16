@@ -21,7 +21,7 @@ import { useAdmin } from "@/context/AdminContext";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
-const API_BASE_URL = "https://qr-menue-backend.onrender.com/api";
+const API_BASE_URL = "http://localhost:4001/api";
 
 export default function MenuItemDetail() {
   const params = useParams();
@@ -212,6 +212,17 @@ export default function MenuItemDetail() {
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
                       className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 outline-none transition-all text-sm font-medium h-32 resize-none"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">Image URL</label>
+                    <input
+                      type="text"
+                      value={image}
+                      onChange={(e) => setImage(e.target.value)}
+                      className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-amber-500/10 outline-none transition-all font-medium text-sm text-zinc-600 italic"
+                      placeholder="https://images.unsplash.com/photo-..."
                     />
                   </div>
 

@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useAdmin } from "@/context/AdminContext";
 import { cn } from "@/lib/utils";
 
-const API_BASE_URL = "https://qr-menue-backend.onrender.com/api";
+const API_BASE_URL = "http://localhost:4001/api";
 
 export default function CategoriesPage() {
   const { categories, menuItems, refreshData, loading } = useAdmin();
